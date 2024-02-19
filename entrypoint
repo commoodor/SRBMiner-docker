@@ -1,0 +1,4 @@
+#!/bin/bash
+cpu_threads=$(grep -c '^processor' /proc/cpuinfo)
+echo "SRBMiner with Param: --algorithm $ALGO --pool $POOL_ADDRESS --wallet $WALLET_USER.$WORKER --password $PASSWORD $EXTRAS --cpu-threads $cpu_threads --keepalive true"
+./SRBMiner-MULTI --algorithm $ALGO --pool $POOL_ADDRESS --wallet $WALLET_USER.$WORKER --password $PASSWORD --cpu-threads $cpu_threads --keepalive true $EXTRAS
