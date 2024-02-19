@@ -18,7 +18,7 @@ services:
       ALGO: verushash
       POOL_ADDRESS: stratum+tcp://ap.luckpool.net:3956#xnsub
       WALLET_USER: RRmpZ1tajCXVG9999LWUD4CPVyZvjpe3iZ
-	    WORKER: Saturn
+      WORKER: Saturn
       PASSWORD: x
       EXTRAS:
 # -------------------------------------------------------------------
