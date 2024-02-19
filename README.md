@@ -29,5 +29,6 @@ services:
 | ALGO | Algo you want to use | verushash |
 | POOL_ADDRESS | The address on the pool you want to mine on | stratum+tcp://na.luckpool.net:3956#xnsub |
 | WALLET_USER | This is ussally used as a user field or a wallet address field | RRmpZ1tajCXVG9999LWUD4CPVyZvjpe3iZ |
+| WORKER | Your worker name | Saturn |
 | PASSWORD | This is the password field | x |
-| EXTRAS |  This is a field use to extra parameters (experimental)  | - |
+| EXTRAS |  This is a field use to extra parameters | - |
