@@ -30,3 +30,15 @@ services:
 | WORKER | Your worker name | Saturn |
 | PASSWORD | This is the password field | x |
 | EXTRAS |  This is a field use to extra parameters | - |
+
+
+
+Support Us:
+
+BTC : bc1q3m9qxtaqzhzk0ay6e6dmxmz439n4f73zz0unqp
+
+ETH : 0x37A8997fBBa95cE12553745E2d6BA4F9Ae5Caa84
+
+Doge : D5CiFXE5PvLn5fQKjCuovecExSNjGct5UU
+
+
