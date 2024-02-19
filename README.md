@@ -8,16 +8,17 @@ More documentation on SRBMiner-Multi: https://github.com/doktor83/SRBMiner-Multi
 ## Here is a example to get going with a server using compose. ##
 ~~~
 ---
-version: '2'
+version: '3'
 services:
 # -------------------------------------------------------------------
-  srbminer:
+  SRBMiner-Multi:
     tty: true
     image: henkallsn/docker-srbminer-multi
     environment:
       ALGO: verushash
-      POOL_ADDRESS: stratum+tcp://na.luckpool.net:3956
+      POOL_ADDRESS: stratum+tcp://ap.luckpool.net:3956#xnsub
       WALLET_USER: RRmpZ1tajCXVG9999LWUD4CPVyZvjpe3iZ
+	    WORKER: Saturn
       PASSWORD: x
       EXTRAS:
 # -------------------------------------------------------------------
