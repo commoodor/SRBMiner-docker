@@ -14,7 +14,7 @@ services:
     image: commoodor/srbminer-docker:main
     environment:
       ALGO: verushash
-      POOL_ADDRESS: stratum+tcp://ap.luckpool.net:3956#xnsub
+      POOL_ADDRESS: stratum+tcp://ap.luckpool.net:3956
       WALLET_USER: RRmpZ1tajCXVG9999LWUD4CPVyZvjpe3iZ
       WORKER: Saturn
       PASSWORD: x
