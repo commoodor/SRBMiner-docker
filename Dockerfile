@@ -15,8 +15,7 @@ RUN apt-get -y update \
     && apt-get -y purge xz-utils \
     && apt-get -y autoremove --purge \
     && apt-get -y clean \
-    && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/* \
-    && history-c
+    && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
 WORKDIR /opt/SRBMiner/
 COPY entrypoint .
