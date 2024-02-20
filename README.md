@@ -11,7 +11,7 @@ services:
 # -------------------------------------------------------------------
   SRBMiner-Multi:
     tty: true
-    image: commoodor/srbminer-docker:main
+    image: commoodor/srbminer-docker
     environment:
       ALGO: verushash
       POOL_ADDRESS: stratum+tcp://ap.luckpool.net:3956
