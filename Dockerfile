@@ -4,7 +4,7 @@ FROM debian:stable-slim
 # Define the version as a build argument
 ARG VERSION
 
-# Install dependencies and fix SSL issues
+# Update, install dependencies, and handle errors
 RUN apt-get -y update \
     && apt-get -y upgrade \
     && apt-get -y install --no-install-recommends \
