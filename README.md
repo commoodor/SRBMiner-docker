@@ -8,7 +8,7 @@ For more information on SRBMiner-Multi, visit [SRBMiner-Multi GitHub](https://gi
 
 To get started with SRBMiner-Multi using Docker Compose, use the following configuration:
 ~~~
-version: '3'
+version: '3.8' # Ensure you use a version that supports resource limits
 services:
 # -------------------------------------------------------------------
   SRBMiner-Multi:
@@ -23,6 +23,12 @@ services:
       PASSWORD: x
       EXTRAS:
 # -------------------------------------------------------------------
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+# For Docker Compose versions <3.4, use mem_limit instead of deploy.resources.limits.memory
+# mem_limit: 1g
 ~~~
 
 ## Environment Variables
