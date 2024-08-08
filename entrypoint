@@ -1,4 +1,31 @@
 #!/bin/bash
-cpu_threads=$(grep -c '^processor' /proc/cpuinfo)
-echo "SRBMiner with Param: --algorithm $ALGO --pool $POOL_ADDRESS --wallet $WALLET_USER.$WORKER --password $PASSWORD $EXTRAS --cpu-threads $cpu_threads --keepalive true"
-./SRBMiner-MULTI --algorithm $ALGO --pool $POOL_ADDRESS --wallet $WALLET_USER.$WORKER --password $PASSWORD $EXTRAS --cpu-threads $cpu_threads --keepalive true 
+
+# Calculate the number of CPU threads and adjust to one less
+total_threads=$(grep -c '^processor' /proc/cpuinfo)
+cpu_threads=$((total_threads - 1))
+
+# Ensure that the number of CPU threads is not negative
+if [ "$cpu_threads" -lt 1 ]; then
+    cpu_threads=1
+fi
+
+# Log the command for debugging
+echo "Starting SRBMiner with parameters:"
+echo "--algorithm $ALGO"
+echo "--pool $POOL_ADDRESS"
+echo "--wallet $WALLET_USER.$WORKER"
+echo "--password $PASSWORD"
+echo "--extras $EXTRAS"
+echo "--cpu-threads $cpu_threads"
+echo "--keepalive true"
+
+# Run with the configured parameters
+exec ./SRBMiner-MULTI \
+    --algorithm "$ALGO" \
+    --pool "$POOL_ADDRESS" \
+    --wallet "$WALLET_USER.$WORKER" \
+    --password "$PASSWORD" \
+    $EXTRAS \
+    --cpu-threads "$cpu_threads" \
+    --keepalive true
+
