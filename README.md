@@ -30,9 +30,9 @@ services:
 
 ## Environment Variables
 
-| ** Variable name ** | **Description** | **Example Value** |
+| **Variable name** | **Description** | **Example Value** |
 |---|---|---|
-| ALGO | Algo you want to use | verushash |
+| ALGO | Algo you want to use | `verushash` |
 | POOL_ADDRESS | The address on the pool you want to mine on | stratum+tcp://na.luckpool.net:3956#xnsub |
 | WALLET_USER | This is ussally used as a user field or a wallet address field | RRmpZ1tajCXVG9999LWUD4CPVyZvjpe3iZ |
 | WORKER | Your worker name | Saturn |
@@ -41,7 +41,7 @@ services:
 
 
 
-Support Us
+## Support Us
 
 If you find this project useful and would like to support us, you can donate to the following addresses:
 
