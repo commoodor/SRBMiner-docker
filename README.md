@@ -8,8 +8,6 @@ For more information on SRBMiner-Multi, visit [SRBMiner-Multi GitHub](https://gi
 
 To get started with SRBMiner-Multi using Docker Compose, use the following configuration:
 
-## Here is a example to get going with a server using compose. ##
-~~~
 ---
 version: '3'
 services:
@@ -32,12 +30,12 @@ services:
 
 | **Variable name** | **Description** | **Example Value** |
 |---|---|---|
-| ALGO | Algo you want to use | `verushash` |
-| POOL_ADDRESS | The address on the pool you want to mine on | stratum+tcp://na.luckpool.net:3956#xnsub |
-| WALLET_USER | This is ussally used as a user field or a wallet address field | RRmpZ1tajCXVG9999LWUD4CPVyZvjpe3iZ |
-| WORKER | Your worker name | Saturn |
-| PASSWORD | This is the password field | x |
-| EXTRAS |  This is a field use to extra parameters | - |
+| `ALGO` | Algo you want to use | `verushash` |
+| `POOL_ADDRESS` | The address on the pool you want to mine on | `stratum+tcp://na.luckpool.net:3956#xnsub` |
+| `WALLET_USER` | This is ussally used as a user field or a wallet address field | `RRmpZ1tajCXVG9999LWUD4CPVyZvjpe3iZ` |
+| `WORKER` | Your worker name | `Saturn` |
+| `PASSWORD` | This is the password field | `x` |
+| `EXTRAS` |  This is a field use to extra parameters | `-` |
 
 
 
