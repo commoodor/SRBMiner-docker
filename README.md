@@ -7,7 +7,7 @@ For more information on SRBMiner-Multi, visit [SRBMiner-Multi GitHub](https://gi
 ## Quick Start with Docker Compose
 
 To get started with SRBMiner-Multi using Docker Compose, use the following configuration:
-
+~~~
 ---
 version: '3'
 services:
