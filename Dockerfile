@@ -1,11 +1,8 @@
-#
-# Dockerfile for SRBMiner-Multi, https://github.com/doktor83/SRBMiner-Multi
-# see entrypoint
-#
+# Base image
 FROM debian:stable-slim
 
 # Define the version as a build argument
-ARG VERSION=2.6.1
+ARG VERSION
 
 # Update and install dependencies
 RUN apt-get -y update \
