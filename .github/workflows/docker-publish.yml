@@ -31,9 +31,15 @@ jobs:
       - name: Fetch the latest version
         id: fetch_version
         run: |
-          # Fetch the latest release version number from GitHub
-          VERSION=$(curl -s https://github.com/doktor83/SRBMiner-Multi/releases/latest | grep -oP '(?<=/tag/)[^"]+')
+          # Fetch the latest release version number from GitHub API
+          LATEST_RELEASE=$(curl -s https://api.github.com/repos/doktor83/SRBMiner-Multi/releases/latest)
+          VERSION=$(echo "$LATEST_RELEASE" | jq -r '.tag_name')
+          
+          # Output the version and set it as an environment variable
           echo "VERSION=${VERSION}" >> $GITHUB_ENV
+        env:
+          # Ensure `jq` is available for parsing JSON
+          PATH: /usr/bin:$PATH
 
       - name: Install cosign
         if: github.event_name != 'pull_request'
