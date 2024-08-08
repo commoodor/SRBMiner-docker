@@ -4,10 +4,14 @@ FROM debian:stable-slim
 # Define the version as a build argument
 ARG VERSION
 
-# Update and install dependencies in one step, then remove unused packages and clean up
+# Update, install dependencies, and fix SSL issues
 RUN apt-get -y update \
     && apt-get -y upgrade \
-    && apt-get -y install --no-install-recommends curl xz-utils wget \
+    && apt-get -y install --no-install-recommends \
+        curl \
+        xz-utils \
+        wget \
+        ca-certificates \
     && VERSION_HYPHEN=$(echo ${VERSION} | sed 's/\./-/g') \
     && curl -L https://github.com/doktor83/SRBMiner-Multi/releases/download/${VERSION}/SRBMiner-Multi-${VERSION_HYPHEN}-Linux.tar.gz -o /opt/SRBMiner-Multi.tar.gz \
     && tar -xf /opt/SRBMiner-Multi.tar.gz -C /opt \
