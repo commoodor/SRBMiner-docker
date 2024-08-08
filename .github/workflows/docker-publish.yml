@@ -37,9 +37,6 @@ jobs:
           
           # Output the version and set it as an environment variable
           echo "VERSION=${VERSION}" >> $GITHUB_ENV
-        env:
-          # Ensure `jq` is available for parsing JSON
-          PATH: /usr/bin:$PATH
 
       - name: Install cosign
         if: github.event_name != 'pull_request'
