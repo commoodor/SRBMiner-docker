@@ -4,22 +4,16 @@ FROM debian:stable-slim
 # Define the version as a build argument
 ARG VERSION
 
-# Update and install dependencies
+# Update and install dependencies in one step, then remove unused packages and clean up
 RUN apt-get -y update \
     && apt-get -y upgrade \
-    && apt-get -y install curl xz-utils wget \
-    && echo "VERSION=${VERSION}" \
-    && cd /opt \
-    # Replace dots with hyphens manually for compatibility with /bin/sh
+    && apt-get -y install --no-install-recommends curl xz-utils wget \
     && VERSION_HYPHEN=$(echo ${VERSION} | sed 's/\./-/g') \
-    && curl -L https://github.com/doktor83/SRBMiner-Multi/releases/download/${VERSION}/SRBMiner-Multi-${VERSION_HYPHEN}-Linux.tar.gz -o SRBMiner-Multi.tar.gz \
-    && ls -l \
-    && tar xf SRBMiner-Multi.tar.gz \
-    && ls -l \
-    && rm -rf SRBMiner-Multi.tar.gz \
-    && mv /opt/SRBMiner-Multi-${VERSION_HYPHEN}/ /opt/SRBMiner/ \
-    && ls -l /opt/SRBMiner/ \
-    && apt-get -y purge xz-utils \
+    && curl -L https://github.com/doktor83/SRBMiner-Multi/releases/download/${VERSION}/SRBMiner-Multi-${VERSION_HYPHEN}-Linux.tar.gz -o /opt/SRBMiner-Multi.tar.gz \
+    && tar -xf /opt/SRBMiner-Multi.tar.gz -C /opt \
+    && mv /opt/SRBMiner-Multi-${VERSION_HYPHEN} /opt/SRBMiner \
+    && rm -rf /opt/SRBMiner-Multi.tar.gz \
+    && apt-get -y purge xz-utils wget \
     && apt-get -y autoremove --purge \
     && apt-get -y clean \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
@@ -27,10 +21,8 @@ RUN apt-get -y update \
 # Set working directory
 WORKDIR /opt/SRBMiner/
 
-# Copy entrypoint script
+# Copy entrypoint script and make it executable
 COPY entrypoint .
-
-# Make entrypoint executable
 RUN chmod +x entrypoint
 
 # Set entrypoint
