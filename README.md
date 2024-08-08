@@ -8,7 +8,6 @@ For more information on SRBMiner-Multi, visit [SRBMiner-Multi GitHub](https://gi
 
 To get started with SRBMiner-Multi using Docker Compose, use the following configuration:
 ~~~
----
 version: '3'
 services:
 # -------------------------------------------------------------------
@@ -43,9 +42,16 @@ services:
 
 If you find this project useful and would like to support us, you can donate to the following addresses:
 
-    BTC: bc1q3m9qxtaqzhzk0ay6e6dmxmz439n4f73zz0unqp
-    ETH: 0x37A8997fBBa95cE12553745E2d6BA4F9Ae5Caa84
-    DOGE: D5CiFXE5PvLn5fQKjCuovecExSNjGct5UU
+- **Bitcoin** ![Bitcoin](https://img.shields.io/badge/Bitcoin-ff9900?style=flat-square&logo=bitcoin&logoColor=white)  
+  `bc1q3m9qxtaqzhzk0ay6e6dmxmz439n4f73zz0unqp`
+
+- **Ethereum** ![Ethereum](https://img.shields.io/badge/Ethereum-627eea?style=flat-square&logo=ethereum&logoColor=white)  
+  `0x37A8997fBBa95cE12553745E2d6BA4F9Ae5Caa84`
+
+- **Dogecoin** ![Dogecoin](https://img.shields.io/badge/Dogecoin-c2a633?style=flat-square&logo=dogecoin&logoColor=white)  
+  `D5CiFXE5PvLn5fQKjCuovecExSNjGct5UU`
 
 Thank you for your support!
+
+
 
