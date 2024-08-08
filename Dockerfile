@@ -10,12 +10,14 @@ RUN apt-get -y update \
     && apt-get -y install curl xz-utils wget \
     && echo "VERSION=${VERSION}" \
     && cd /opt \
-    && curl -L https://github.com/doktor83/SRBMiner-Multi/releases/download/${VERSION}/SRBMiner-Multi-${VERSION//./-}-Linux.tar.gz -o SRBMiner-Multi.tar.gz \
+    # Replace dots with hyphens manually for compatibility with /bin/sh
+    && VERSION_HYPHEN=$(echo ${VERSION} | sed 's/\./-/g') \
+    && curl -L https://github.com/doktor83/SRBMiner-Multi/releases/download/${VERSION}/SRBMiner-Multi-${VERSION_HYPHEN}-Linux.tar.gz -o SRBMiner-Multi.tar.gz \
     && ls -l \
     && tar xf SRBMiner-Multi.tar.gz \
     && ls -l \
     && rm -rf SRBMiner-Multi.tar.gz \
-    && mv /opt/SRBMiner-Multi-${VERSION//./-}/ /opt/SRBMiner/ \
+    && mv /opt/SRBMiner-Multi-${VERSION_HYPHEN}/ /opt/SRBMiner/ \
     && ls -l /opt/SRBMiner/ \
     && apt-get -y purge xz-utils \
     && apt-get -y autoremove --purge \
