@@ -1,3 +1,5 @@
+[![Docker](https://github.com/commoodor/SRBMiner-docker/actions/workflows/docker-publish.yml/badge.svg?branch=latest)](https://github.com/commoodor/SRBMiner-docker/actions/workflows/docker-publish.yml)
+
 # Docker-SRBMiner-Multi
 
 A Docker image for SRBMiner-Multi version 2.6.1.
