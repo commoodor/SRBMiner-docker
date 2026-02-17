@@ -10,22 +10,27 @@ For more information on SRBMiner-Multi, visit [SRBMiner-Multi GitHub](https://gi
 
 To get started with SRBMiner-Multi using Docker Compose, use the following configuration:
 ~~~
-version: '3' # Ensure you use a version that supports resource limits
+version: '3.8'
+
 services:
-# -------------------------------------------------------------------
-  SRBMiner-Multi:
-    tty: true
+  SRBMiner:
+    container_name: SRBMiner
     image: commoodor/srbminer-docker
-    restart: always
+    restart: unless-stopped
+    tty: true
+    mem_limit: 1g
     environment:
       ALGO: verushash
-      POOL_ADDRESS: stratum+tcp://ap.luckpool.net:3956
+      POOL_ADDRESS: stratum+ssl://sg.vipor.net:5140
       WALLET_USER: RRmpZ1tajCXVG9999LWUD4CPVyZvjpe3iZ
       WORKER: Saturn
       PASSWORD: x
       EXTRAS:
-# -------------------------------------------------------------------
-    mem_limit: 1g
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
 ~~~
 
 ## Environment Variables
