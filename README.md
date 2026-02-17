@@ -46,3 +46,69 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
+```
+
+---
+
+## 🛠 Environment Variables
+
+| Variable        | Description              | Example                                      |
+|----------------|--------------------------|----------------------------------------------|
+| `ALGO`         | Mining algorithm         | `verushash`                                  |
+| `POOL_ADDRESS` | Mining pool address      | `stratum+tcp://na.luckpool.net:3956#xnsub`    |
+| `WALLET_USER`  | Wallet address or user   | `RRmpZ1tajCXVG9999LWUD4CPVyZvjpe3iZ`           |
+| `WORKER`       | Worker name              | `Saturn`                                     |
+| `PASSWORD`     | Pool password            | `x`                                          |
+| `EXTRAS`       | Extra SRBMiner flags     | `-t 4`                                       |
+
+---
+
+## ❤️ Support Development
+
+<p align="center">
+  <a href="https://github.com/sponsors/commoodor">
+    <img src="https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ff69b4?style=for-the-badge&logo=githubsponsors&logoColor=white" />
+  </a>
+</p>
+
+<details>
+<summary>💰 Click to view donation addresses</summary>
+
+<br>
+
+<p align="center">
+
+<img src="https://img.shields.io/badge/Bitcoin-ff9900?style=for-the-badge&logo=bitcoin&logoColor=white" />
+<br/>
+<code>bc1q3m9qxtaqzhzk0ay6e6dmxmz439n4f73zz0unqp</code>
+
+<br><br>
+
+<img src="https://img.shields.io/badge/Ethereum-627eea?style=for-the-badge&logo=ethereum&logoColor=white" />
+<br/>
+<code>0x37A8997fBBa95cE12553745E2d6BA4F9Ae5Caa84</code>
+
+<br><br>
+
+<img src="https://img.shields.io/badge/Dogecoin-c2a633?style=for-the-badge&logo=dogecoin&logoColor=white" />
+<br/>
+<code>D5CiFXE5PvLn5fQKjCuovecExSNjGct5UU</code>
+
+</p>
+
+</details>
+
+---
+
+## 📜 License
+
+This project redistributes official **SRBMiner-Multi** binaries.  
+Please refer to the upstream repository for full license details:
+
+👉 https://github.com/doktor83/SRBMiner-Multi
+
+---
+
+<p align="center">
+  Built for performance • Optimized for Docker • Dark mode ready 🌙
+</p>
